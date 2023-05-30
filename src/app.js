@@ -5,8 +5,7 @@ import "./style.css";
 import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
-const theSymbolElement = document.getElementById("theSymbol");
-const theBottomSymbolElement = document.getElementById("thSymbol");
+const theSymbolElement = document.getElementsByClassName("theSymbol");
 const numberElement = document.getElementById("theNumber");
 
 function getRandomElementFromArray(array) {
@@ -20,12 +19,11 @@ window.onload = function() {
   let randomSymbol = getRandomElementFromArray(symbol);
   let randomNumber = getRandomElementFromArray(numbers);
 
-  theSymbolElement.innerHTML = randomSymbol;
-  theBottomSymbolElement.innerHTML = randomSymbol;
-  numberElement.innerHTML = randomNumber;
-
-  if (randomSymbol == "♥" || randomSymbol == "♦") {
-    document.getElementById("theSymbol").classList.add("cardRed");
-    document.getElementById("thSymbol").classList.add("cardRed");
+  for (let i = 0; i < theSymbolElement.length; i++) {
+    theSymbolElement[i].innerHTML = randomSymbol;
+    if (randomSymbol == "♥" || randomSymbol == "♦") {
+      theSymbolElement[i].classList.add("cardRed");
+    }
   }
+  numberElement.innerHTML = randomNumber;
 };
