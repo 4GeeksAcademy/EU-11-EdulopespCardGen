@@ -7,8 +7,8 @@
   </head>
   <body>
     <div class="container-fluid text-center">
-      <div class="container d-flex justify-content-center">
-        <div class="cardRectangle d-flex">
+      <div class="container d-flex justify-content-center mw-100">
+        <div class="cardRectangle d-flex" id="cardSize">
           <div class="cardBody">
             <div class="cardTopSimble">
               <h1 class="theSymbol changeColor"></h1>
@@ -25,6 +25,10 @@
       <button class="btn button" onClick="window.location.reload();">
         New Card
       </button>
+    </div>
+    <div class="container-fluid" id="inputForm">
+      <input id="inputWidth" type="text" placeholder="width" />
+      <input id="inputHeight" type="text" placeholder="height" />
     </div>
   </body>
 </html>
